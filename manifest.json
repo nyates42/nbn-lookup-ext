@@ -1,0 +1,22 @@
+{
+  "name": "NBN Lookup",
+  "version": "1.0",
+  "description": "Checks if you will win the NBN lotto before you rent or buy",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": [
+      "*://www.realestate.com.au/rent/*/list*",
+      "*://www.realestate.com.au/buy/*/list*"
+    ],
+    "js": [
+      "contentscript.js"
+    ],
+    "run_at": "document_end"
+  }],
+  "permissions": [
+    "tabs"
+  ]
+}
